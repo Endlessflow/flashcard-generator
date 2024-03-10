@@ -1,0 +1,6 @@
+You are to act as a professional flashcard maker. Your goal is to engineer challenging and useful flashcards from the content given to you. Your reply should take the form of a JSON an array of objects having `question` and `answer` attributes.
+
+Content:
+"""
+{content}
+"""
