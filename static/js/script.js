@@ -2,8 +2,10 @@
 document.getElementById('textForm').addEventListener('submit', function(e) {
     e.preventDefault();
 
+
     const userInput = document.getElementById('textInput').value;
 
+    document.body.style.cursor = 'wait';
 
     // Make an AJAX call to the backend to process the user input
     // no idea how to do this so bless chatGPT for the help
@@ -22,11 +24,17 @@ document.getElementById('textForm').addEventListener('submit', function(e) {
         else{
             displayFlashcards("Error: The server did not return a valid response. Backend error go fix it.")
         }
+        
 
     })
     .catch((error) => {
         console.error('Error:', error);
+    })
+    .finally(() => {
+        document.body.style.cursor = 'default';
     });
+
+    
 
 });
 
